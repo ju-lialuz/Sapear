@@ -33,6 +33,11 @@ struct TrailView: View {
                     SectionView(section: $contentController.wordsSection[index])
                 }
             }
+            else if screenName == "Frases" {
+                ForEach(contentController.phrasesSection.indices, id: \.self) { index in
+                    SectionView(section: $contentController.phrasesSection[index])
+                }
+            }
         }
         .fullScreenCover(isPresented: $profileController.onPhase) {
             PhaseManagerView()

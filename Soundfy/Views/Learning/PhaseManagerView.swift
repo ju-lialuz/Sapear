@@ -93,6 +93,9 @@ struct PhaseManagerView: View {
                     else if lessonType == "wordClass" {
                         LessonView(lesson: profileController.actualPhase!.phaseLessons[count], changeScreen: changeScreen, count: count, buttonText: $buttonText)
                     }
+                    else if lessonType == "phrasesClass" {
+                        LessonView(lesson: profileController.actualPhase!.phaseLessons[count], changeScreen: changeScreen, count: count, buttonText: $buttonText)
+                    }
                 }
                 else if(actualScreen == "exercise") {
                     
@@ -103,6 +106,9 @@ struct PhaseManagerView: View {
                         ExerciseView(exercise: profileController.actualPhase!.phaseExercises[count], count: count, changeScreen: changeScreen)
                     }
                     else if exerciseType == "wordExercise" {
+                        ExerciseView(exercise: profileController.actualPhase!.phaseExercises[count], count: count, changeScreen: changeScreen)
+                    }
+                    else if exerciseType == "phrasesExercise" {
                         ExerciseView(exercise: profileController.actualPhase!.phaseExercises[count], count: count, changeScreen: changeScreen)
                     }
                 }

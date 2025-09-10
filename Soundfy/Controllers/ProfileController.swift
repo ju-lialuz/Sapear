@@ -53,6 +53,18 @@ class ProfileController: ObservableObject {
         }
     }
     
+    @Published var phrasesExercisesDone: Double {
+        didSet {
+            saveDoubleValue(phrasesExercisesDone, forKey: phrasesExercisesDoneKey)
+        }
+    }
+    
+    @Published var phrasesExercisesRight: Double {
+        didSet {
+            saveDoubleValue(phrasesExercisesRight, forKey: phrasesExercisesRightKey)
+        }
+    }
+    
     private let actualPhaseIdKey = "actualPhaseIdKey"
     
     private let soundsExercisesDoneKey = "soundsExercisesDoneKey"
@@ -63,6 +75,9 @@ class ProfileController: ObservableObject {
     
     private let wordsExercisesDoneKey = "wordsExercisesDoneKey"
     private let wordsExercisesRightKey = "wordsExercisesRightKey"
+    
+    private let phrasesExercisesDoneKey = "phrasesExercisesDoneKey"
+    private let phrasesExercisesRightKey = "phrasesExercisesRightKey"
 
     init (actualPhase: Phase? = nil, phasesDone: [UUID] = [], onPhase: Bool = false, actualPhaseId: UUID = UUID(uuidString: "550e8400-e29b-41d4-a716-446655440000")!) {
 
@@ -73,6 +88,8 @@ class ProfileController: ObservableObject {
         self.phonemeExercisesRight = UserDefaults.standard.double(forKey: phonemeExercisesRightKey)
         self.wordsExercisesDone = UserDefaults.standard.double(forKey: wordsExercisesDoneKey)
         self.wordsExercisesRight = UserDefaults.standard.double(forKey: wordsExercisesRightKey)
+        self.phrasesExercisesDone = UserDefaults.standard.double(forKey: phrasesExercisesDoneKey)
+        self.phrasesExercisesRight = UserDefaults.standard.double(forKey: phrasesExercisesRightKey)
         
         self.actualPhase = actualPhase
         self.phasesDone = phasesDone

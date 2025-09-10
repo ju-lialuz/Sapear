@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State var screenName: String = "Sons"
-    @State var screens = ["Sons",  "Fonemas", "Palavras"]
+    @State var screens = ["Sons",  "Fonemas", "Palavras", "Frases"]
     @State var aux: Bool = false
     
     @EnvironmentObject var profileController: ProfileController

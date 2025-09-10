@@ -891,7 +891,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Soundfy/Preview Content\"";
-				DEVELOPMENT_TEAM = D3QL34P3MQ;
+				DEVELOPMENT_TEAM = ACG36J6YH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soundfy/Info.plist;
@@ -905,7 +905,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = julialuz.Sapear;
+				PRODUCT_BUNDLE_IDENTIFIER = gibonifacio.Sapear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -924,7 +924,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Soundfy/Preview Content\"";
-				DEVELOPMENT_TEAM = D3QL34P3MQ;
+				DEVELOPMENT_TEAM = ACG36J6YH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soundfy/Info.plist;
@@ -938,7 +938,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = julialuz.Sapear;
+				PRODUCT_BUNDLE_IDENTIFIER = gibonifacio.Sapear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
