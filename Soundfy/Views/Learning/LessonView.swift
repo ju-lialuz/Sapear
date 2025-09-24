@@ -37,66 +37,14 @@ struct LessonView: View {
     
     var body: some View {
         VStack {
-            
             // ===== BODY =====
             
-            VStack (spacing: 10) {
-                
-                
-                Text(lesson.lessonName)
-                    .font(Font.custom("Quicksand-Bold", size: 40, relativeTo: .largeTitle))
-                    .bold()
-                    .multilineTextAlignment(.center)
-                
-                Text(lesson.lessonDescription)
-                    .font(.title2)
-                    .fontWeight(.medium)
-                    .padding(.horizontal)
-                    .multilineTextAlignment(.center)
-                
-                if (lesson.lessonType != "soundClass") {
-                    VStack {
-                        FrogTalking(playSound: playSound, getSound: {return ""}, palavraescrita: $palavraescrita, isDisabled: true, isTalking: $isTalking, type: lesson.lessonType)
-                            .accessibilityHidden(true)
-
-                    }
-                    
-                    
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach (lesson.lessonAlternatives, id: \.alternativeId) {
-                            alternative in
-                            AlternativeButton(item: alternative, buttonAction: {
-                                if alternative.alternativeSoundName != nil {
-                                    playSound(Nome: alternative.alternativeSoundName ?? "")
-                                }
-                                
-                                palavraescrita = alternative.alternativeSoundName!
-                                isTalking.toggle()
-                            })
-                            .accessibilityElement(children: .ignore)
-                            .accessibilityLabel(Text("Alternativa \(alternative.alternativeLabel) Botão"))
-                            
-                        }
-                    }
-                   
-                }
-                else {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach (lesson.lessonAlternatives, id: \.alternativeId) {
-                            alternative in
-                            AlternativeButton(item: alternative, buttonAction: {
-                                if alternative.alternativeSoundName != nil {
-                                    playSound(Nome: alternative.alternativeSoundName ?? "")
-                                }
-                            })
-                            .accessibilityElement(children: .ignore)
-                            .accessibilityLabel(Text("Alternativa \(alternative.alternativeLabel) Botão"))
-                        }
-                    }
-                }
-                
-                
-                
+            if (lesson.lessonType == "soundClass") {
+                soundPhase
+            } else if (lesson.lessonType == "phonemeClass") || (lesson.lessonType == "wordClass") {
+                phonemeAndWordPhase
+            } else {
+                phrasesClass
             }
             
             // ===== FOOTER =====
@@ -108,5 +56,97 @@ struct LessonView: View {
         .padding(.horizontal, 30)
         .multilineTextAlignment(.center)
         .foregroundColor(Color(red: 56/255, green: 128/255, blue: 200/255))
+    }
+    
+    @ViewBuilder
+    var title: some View {
+        Text(lesson.lessonName)
+            .font(Font.custom("Quicksand-Bold", size: 40, relativeTo: .largeTitle))
+            .bold()
+            .multilineTextAlignment(.center)
+        
+        Text(lesson.lessonDescription)
+            .font(.title2)
+            .fontWeight(.medium)
+            .padding(.horizontal)
+            .multilineTextAlignment(.center)
+    }
+    
+    @ViewBuilder
+    var soundPhase: some View {
+        VStack (spacing: 130) {
+            
+            VStack (spacing: 30) {
+                title
+            }
+            
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach (lesson.lessonAlternatives, id: \.alternativeId) {
+                    alternative in
+                    AlternativeButton(item: alternative, lesson: lesson, buttonAction: {
+                        if alternative.alternativeSoundName != nil {
+                            playSound(Nome: alternative.alternativeSoundName ?? "")
+                        }
+                    })
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Text("Alternativa \(alternative.alternativeLabel) Botão"))
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var frogView: some View {
+        VStack (spacing: 15) {
+            title
+            
+            FrogTalking(lesson: lesson, playSound: playSound, getSound: {return ""}, palavraescrita: $palavraescrita, isDisabled: true, isTalking: $isTalking, type: lesson.lessonType)
+                .accessibilityHidden(true)
+        }
+    }
+    
+    @ViewBuilder
+    var phonemeAndWordPhase: some View {
+        VStack (spacing: 20) {
+            frogView
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach (lesson.lessonAlternatives, id: \.alternativeId) {
+                    alternative in
+                    AlternativeButton(item: alternative, lesson: lesson, buttonAction: {
+                        if alternative.alternativeSoundName != nil {
+                            playSound(Nome: alternative.alternativeSoundName ?? "")
+                        }
+                        
+                        palavraescrita = alternative.alternativeSoundName!
+                        isTalking.toggle()
+                    })
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Text("Alternativa \(alternative.alternativeLabel) Botão"))
+                    
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var phrasesClass: some View {
+        VStack (spacing: 60) {
+            frogView
+                ForEach (lesson.lessonAlternatives, id: \.alternativeId) {
+                    alternative in
+                    AlternativeButton(item: alternative, lesson: lesson, buttonAction: {
+                        if alternative.alternativeSoundName != nil {
+                            playSound(Nome: alternative.alternativeSoundName ?? "")
+                        }
+                        
+                        palavraescrita = alternative.alternativeSoundName!
+                        isTalking.toggle()
+                    })
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Text("Alternativa \(alternative.alternativeLabel) Botão"))
+                    
+                }
+            
+        }
     }
 }
