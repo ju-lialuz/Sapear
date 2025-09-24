@@ -9,8 +9,13 @@ import SwiftUI
 
 struct FrogTalking: View {
     
+    var lesson: Lesson?
+    var exercise: Exercise?
     var playSound: (String) -> Void
     var getSound: (() -> String)?
+    
+    var backgroundColorGreen: Color = Color(red: 193/255, green: 231/255, blue: 86/255)
+    var borderGreen: Color = Color(red: 54/255, green: 124/255, blue: 39/255)
 
     @Binding var palavraescrita: String
     var isDisabled: Bool
@@ -31,7 +36,8 @@ struct FrogTalking: View {
         "O",//10
         "R",//11
         "SZ",//12
-        "U"//13
+        "U",//13
+        "BocaNeutra"//14
     ]
     
     @State var boca: String = "AE"
@@ -109,6 +115,8 @@ struct FrogTalking: View {
                 lista.append(7)
             case "Z":
                 lista.append(12)
+            case " ":
+                lista.append(14)
                 
             default:
                 print("Sem boca pra letra \(i)")
@@ -121,17 +129,27 @@ struct FrogTalking: View {
     
     var body: some View {
         ZStack{
-            Image("SapoExercise")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 130, height: 200)
+            if self.lesson != nil {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(backgroundColorGreen)
+                    .frame(width: 328, height: 243)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(borderGreen, lineWidth: 2)
+                    )
+            } else if self.exercise != nil {
+                Image("SapoNovo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 191, height: 225)
+            }
             
             if isTalking {
                 VStack{
                     Image(bocas[palavra(letras: palavraescrita)[index]])
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 60, height: 20)
+                        .frame(width: lesson != nil ? 297 : 54, height: lesson != nil ? 189 : 35)
                         .transition(transition)
                         .onReceive(imageSwitchTimer) { _ in
                             let aux = self.palavra(letras: palavraescrita).count
@@ -146,7 +164,7 @@ struct FrogTalking: View {
                             }
                         }
                 }
-                .padding(.top)
+//                .padding(.top)
             }
             else {
                 VStack{
@@ -155,10 +173,10 @@ struct FrogTalking: View {
                         .aspectRatio(contentMode: .fit)
                         .scaledToFit()
                         .transition(transition)
-                        .frame(width: 60, height: 20)
+                        .frame(width: lesson != nil ? 297 : 54, height: lesson != nil ? 189 : 35)
                     
                 }
-                .padding(.top)
+//                .padding(.top, 50)
             }
         }
         .onChange(of: isTalking, perform: { newValue in
