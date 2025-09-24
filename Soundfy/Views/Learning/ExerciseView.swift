@@ -80,9 +80,12 @@ struct ExerciseView: View {
                     profileController.phonemeExercisesRight = profileController.phonemeExercisesRight + 1
                     profileController.phonemeExercisesDone = profileController.phonemeExercisesDone + 1
                 }
-                else {
+                else if exercise.exerciseType == "wordExercise" {
                     profileController.wordsExercisesRight = profileController.wordsExercisesRight + 1
                     profileController.wordsExercisesDone = profileController.wordsExercisesDone + 1
+                } else {
+                    profileController.phrasesExercisesRight = profileController.phrasesExercisesRight + 1
+                    profileController.phrasesExercisesDone = profileController.phrasesExercisesDone + 1
                 }
             }
         }
@@ -98,8 +101,10 @@ struct ExerciseView: View {
                 else if exercise.exerciseType == "phonemeExercise" {
                     profileController.phonemeExercisesDone = profileController.phonemeExercisesDone + 1
                 }
-                else {
+                else if exercise.exerciseType == "wordExercise" {
                     profileController.wordsExercisesDone = profileController.wordsExercisesDone + 1
+                } else {
+                    profileController.phrasesExercisesDone = profileController.phrasesExercisesDone + 1
                 }
             }
             

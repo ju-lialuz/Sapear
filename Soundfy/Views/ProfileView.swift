@@ -14,6 +14,7 @@ struct ProfileView: View {
     @State var soundsValue: Float = 0.0
     @State var wordsValue: Float = 0.0
     @State var phonemeValue: Float = 0.0
+    @State var phrasesValue: Float = 0.0
     @FetchRequest(sortDescriptors: []) var phasesDone: FetchedResults<PhaseCoreData>
     
     var body: some View {
@@ -34,12 +35,12 @@ struct ProfileView: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color.white)
-                        .frame(width: 300, height: 300)
+                        .frame(width: 300, height: 400)
                     Image("sapoEstatistica")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 130, height: 130)
-                        .offset(x:100, y:-139)
+                        .offset(x:100, y:-189)
                         .accessibilityHidden(true)
 
                     
@@ -96,15 +97,33 @@ struct ProfileView: View {
                             }
                             .frame(width: 200, height: 20)
                             
+                            HStack{
+                                Text("Frases")
+                                    .foregroundStyle(Color.green)
+                                Spacer()
+                            }.frame(width: 200, height: 20)
+                            ZStack {
+                                ProgressBar(value: $phrasesValue, maxValue: 1.0, color: .green)
+                                HStack {
+                                    Spacer()
+                                    Text("\( profileController.phrasesExercisesDone.isZero ? 0 :(profileController.phrasesExercisesRight / profileController.phrasesExercisesDone)*100,specifier: "%.0f")%")
+                                        .font(.body)
+                                        .padding(.trailing, 20)
+                                }
+                            }
+                            .frame(width: 200, height: 20)
+                            
                             //                            Text("Realizados: \(profileController.soundsExercisesDone, specifier: "%.0f")")
                             //                            Text("Acertados: \(profileController.soundsExercisesRight, specifier: "%.0f")")
                         }
+
                     }
                     
                     .onAppear {
                         soundsValue = Float((profileController.soundsExercisesRight / profileController.soundsExercisesDone))
                         phonemeValue = Float((profileController.phonemeExercisesRight / profileController.phonemeExercisesDone))
                         wordsValue = Float((profileController.wordsExercisesRight / profileController.wordsExercisesDone))
+                        phrasesValue = Float((profileController.phrasesExercisesRight / profileController.phrasesExercisesDone))
                     }
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
