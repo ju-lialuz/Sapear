@@ -137,7 +137,7 @@ struct ExerciseView: View {
                     }
                     
                     else {
-                        FrogTalking(playSound: playSound, getSound: getSound, palavraescrita: $palavraescrita, isDisabled: false, isTalking: $isTalking, type: exercise.exerciseType)
+                        FrogTalking(exercise: exercise, playSound: playSound, getSound: getSound, palavraescrita: $palavraescrita, isDisabled: false, isTalking: $isTalking, type: exercise.exerciseType)
                             .accessibilityElement(children: .ignore)
                             .accessibility(label: Text(hasBeenRead ? "" : "Sapo Botão"))
                     }
@@ -146,17 +146,12 @@ struct ExerciseView: View {
                     hasBeenRead = true
                 }
                 
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(exercise.exerciseAlternatives.indices, id: \.self) {
-                        number in
-                        ExerciseSoundButton(item: exercise.exerciseAlternatives[number], exerciseAnswer: exercise.exerciseAnswer, number: number, buttonAction: {
-                            if exercise.exerciseAlternatives[number].alternativeSoundName != nil {
-                                playSound(Nome: exercise.exerciseAlternatives[number].alternativeSoundName ?? "")
-                            }
-                        }, selectedOption: $selectedOption, selectedOptionId: $selectedOptionId, clickedAlternatives: $clickedAlternatives)
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityLabel(Text("Alternativa \(exercise.exerciseAlternatives[number].alternativeLabel) Botão"))
+                if exercise.exerciseType != "phrasesExercise" {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        alternatives
                     }
+                } else {
+                    alternatives
                 }
             }
             
@@ -191,5 +186,19 @@ struct ExerciseView: View {
         .padding(.horizontal, 30)
         .multilineTextAlignment(.center)
         .foregroundColor(Color(red: 56/255, green: 128/255, blue: 200/255))
+    }
+    
+    @ViewBuilder
+    var alternatives: some View {
+        ForEach(exercise.exerciseAlternatives.indices, id: \.self) {
+            number in
+            ExerciseSoundButton(item: exercise.exerciseAlternatives[number], exercise: exercise, exerciseAnswer: exercise.exerciseAnswer, number: number, buttonAction: {
+                if exercise.exerciseAlternatives[number].alternativeSoundName != nil {
+                    playSound(Nome: exercise.exerciseAlternatives[number].alternativeSoundName ?? "")
+                }
+            }, selectedOption: $selectedOption, selectedOptionId: $selectedOptionId, clickedAlternatives: $clickedAlternatives)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Text("Alternativa \(exercise.exerciseAlternatives[number].alternativeLabel) Botão"))
+        }
     }
 }
