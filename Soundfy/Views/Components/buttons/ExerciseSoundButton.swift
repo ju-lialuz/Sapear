@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExerciseSoundButton: View {
     var item: Alternative
+    var exercise: Exercise
     var exerciseAnswer: Int
     var number: Int
     var buttonAction: () -> Void
@@ -18,8 +19,8 @@ struct ExerciseSoundButton: View {
     @Binding var selectedOptionId: UUID
     @Binding var clickedAlternatives: [UUID]
     
-    @State var buttonPrimaryColor: Color = Color(red: 238/255, green: 128/255, blue: 81/255)
-    @State var buttonSecondaryColor: Color = Color(red: 229/255, green: 94/255, blue: 41/255)
+    @State var buttonPrimaryColor: Color = Color(red: 242/255, green: 165/255, blue: 132/255)
+    @State var buttonSecondaryColor: Color = Color(red: 238/255, green: 128/255, blue: 81/255)
     @State var buttonPading: CGFloat = 8
     
     func getSafeImage(named: String) -> Bool {
@@ -41,12 +42,12 @@ struct ExerciseSoundButton: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color(red: 83/255, green: 83/255, blue: 83/255))
-                            .frame(width: 140, height: 100)
-                        
+                            .frame(width: exercise.exerciseType == "phrasesExercise" ? 328 : 157, height: exercise.exerciseType == "phrasesExercise" ? 63 : 105)
+
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color(UIColor.systemGray))
-                                .frame(width: 140, height: 100)
+                                .frame(width: exercise.exerciseType == "phrasesExercise" ? 328 : 157, height: exercise.exerciseType == "phrasesExercise" ? 63 : 105)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(Color(red: 83/255, green: 83/255, blue: 83/255), lineWidth: 3)
@@ -63,11 +64,22 @@ struct ExerciseSoundButton: View {
                                     }
                                     else {
                                         Image(systemName: item.alternativeImage!)
-                                            .font(.title)
+                                            .font(.system(size: 48))
                                     }
                                 }
-                                Text(item.alternativeLabel)
-                            }
+                                if (exercise.exerciseType == "phonemeExercise") {
+                                    Text(item.alternativeLabel)
+                                    .font(Font.custom("Quicksand-Bold", size: 68, relativeTo: .largeTitle))
+                                } else if (exercise.exerciseType == "wordExercise") {
+                                    Text(item.alternativeLabel)
+                                        .font(Font.custom("Quicksand-Bold", size: 25, relativeTo: .largeTitle))
+                                } else if (exercise.exerciseType == "soundExercise") {
+                                    Text(item.alternativeLabel)
+                                        .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
+                                } else {
+                                    Text(item.alternativeLabel)
+                                        .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
+                                }                            }
                             .foregroundColor(.secondary)
                         }
                         .padding(.trailing, buttonPading)
@@ -98,12 +110,12 @@ struct ExerciseSoundButton: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color(red: 34/255, green: 169/255, blue: 1/255))
-                            .frame(width: 140, height: 100)
-                        
+                            .frame(width: exercise.exerciseType == "phrasesExercise" ? 328 : 157, height: exercise.exerciseType == "phrasesExercise" ? 63 : 105)
+
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color(red: 159/255, green: 252/255, blue: 191/255))
-                                .frame(width: 140, height: 100)
+                                .frame(width: exercise.exerciseType == "phrasesExercise" ? 328 : 157, height: exercise.exerciseType == "phrasesExercise" ? 63 : 105)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(Color(red: 34/255, green: 169/255, blue: 1/255), lineWidth: 3)
@@ -122,11 +134,22 @@ struct ExerciseSoundButton: View {
                                     }
                                     else {
                                         Image(systemName: item.alternativeImage!)
-                                            .font(.title)
+                                            .font(.system(size: 48))
                                     }
                                 }
-                                Text(item.alternativeLabel)
-                            }
+                                if (exercise.exerciseType == "phonemeExercise") {
+                                    Text(item.alternativeLabel)
+                                    .font(Font.custom("Quicksand-Bold", size: 68, relativeTo: .largeTitle))
+                                } else if (exercise.exerciseType == "wordExercise") {
+                                    Text(item.alternativeLabel)
+                                        .font(Font.custom("Quicksand-Bold", size: 25, relativeTo: .largeTitle))
+                                } else if (exercise.exerciseType == "soundExercise") {
+                                    Text(item.alternativeLabel)
+                                        .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
+                                } else {
+                                    Text(item.alternativeLabel)
+                                        .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
+                                }                            }
                             .foregroundColor(.green)
                         }
                         .padding(.trailing, buttonPading)
@@ -157,13 +180,13 @@ struct ExerciseSoundButton: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .fill(buttonSecondaryColor)
-                            .frame(width: 140, height: 100)
-                        
+                            .frame(width: exercise.exerciseType == "phrasesExercise" ? 328 : 157, height: exercise.exerciseType == "phrasesExercise" ? 63 : 105)
+
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(buttonPrimaryColor)
-                                .frame(width: 140, height: 100)
-                            
+                                .frame(width: exercise.exerciseType == "phrasesExercise" ? 328 : 157, height: exercise.exerciseType == "phrasesExercise" ? 63 : 105)
+
                             
                             VStack {
                                 if item.alternativeImage != "" {
@@ -175,11 +198,22 @@ struct ExerciseSoundButton: View {
                                     }
                                     else {
                                         Image(systemName: item.alternativeImage!)
-                                            .font(.title)
+                                            .font(.system(size: 48))
                                     }
                                 }
-                                Text(item.alternativeLabel)
-                            }
+                                if (exercise.exerciseType == "phonemeExercise") {
+                                    Text(item.alternativeLabel)
+                                    .font(Font.custom("Quicksand-Bold", size: 68, relativeTo: .largeTitle))
+                                } else if (exercise.exerciseType == "wordExercise") {
+                                    Text(item.alternativeLabel)
+                                        .font(Font.custom("Quicksand-Bold", size: 25, relativeTo: .largeTitle))
+                                } else if (exercise.exerciseType == "soundExercise") {
+                                    Text(item.alternativeLabel)
+                                        .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
+                                } else {
+                                    Text(item.alternativeLabel)
+                                        .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
+                                }                            }
                             .foregroundColor(.white)
                         }
                         .padding(.trailing, buttonPading)
@@ -213,11 +247,11 @@ struct ExerciseSoundButton: View {
         .onChange(of: selectedOption) { newValue in
             
             if selectedOption == number {
-                buttonPrimaryColor = Color(red: 242/255, green: 165/255, blue: 132/255)
+                buttonPrimaryColor = Color(red: 238/255, green: 128/255, blue: 81/255)
                 buttonPading = 0
             }
             else {
-                buttonPrimaryColor = Color(red: 238/255, green: 128/255, blue: 81/255)
+                buttonPrimaryColor =  Color(red: 242/255, green: 165/255, blue: 132/255)
                 buttonPading = 8
             }
         }
