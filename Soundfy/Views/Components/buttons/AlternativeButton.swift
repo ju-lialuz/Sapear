@@ -9,9 +9,10 @@ import SwiftUI
 
 struct AlternativeButton: View {
     var item: Alternative
+    var lesson: Lesson
     var buttonAction: () -> Void
-    @State var buttonPrimaryColor: Color = Color(red: 238/255, green: 128/255, blue: 81/255)
-    @State var buttonSecondaryColor: Color = Color(red: 229/255, green: 94/255, blue: 41/255)
+    @State var buttonPrimaryColor: Color = Color(red: 242/255, green: 165/255, blue: 132/255)
+    @State var buttonSecondaryColor: Color = Color(red: 238/255, green: 128/255, blue: 81/255)
     @State var buttonPading: CGFloat = 8
     
     func getSafeImage(named: String) -> Bool {
@@ -28,13 +29,13 @@ struct AlternativeButton: View {
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
                     .fill(buttonSecondaryColor)
-                    .frame(width: 140, height: 100)
+                    .frame(width: lesson.lessonType == "phrasesClass" ? 328 : 157, height: lesson.lessonType == "phrasesClass" ? 95 : 105)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .fill(buttonPrimaryColor)
-                        .frame(width: 140, height: 100)
-                    
+                        .frame(width: lesson.lessonType == "phrasesClass" ? 328 : 157, height: lesson.lessonType == "phrasesClass" ? 95 : 105)
+
                     
                     VStack {
                         if item.alternativeImage != ""  {
@@ -46,11 +47,23 @@ struct AlternativeButton: View {
                             }
                             else {
                                 Image(systemName: item.alternativeImage!)
-                                    .font(.title)
+                                    .font(.system(size: 48))
                             }
                         }
                         
-                        Text(item.alternativeLabel)
+                        if (lesson.lessonType == "phonemeClass") {
+                            Text(item.alternativeLabel)
+                            .font(Font.custom("Quicksand-Bold", size: 68, relativeTo: .largeTitle))
+                        } else if (lesson.lessonType == "wordClass") {
+                            Text(item.alternativeLabel)
+                                .font(Font.custom("Quicksand-Bold", size: 25, relativeTo: .largeTitle))
+                        } else if (lesson.lessonType == "soundClass") {
+                            Text(item.alternativeLabel)
+                                .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
+                        } else {
+                            Text(item.alternativeLabel)
+                                .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
+                        }
                     }
                     .foregroundColor(.white)
                 }
@@ -62,10 +75,10 @@ struct AlternativeButton: View {
         
         .onLongPressGesture(minimumDuration: .infinity, maximumDistance: .infinity, pressing: { pressing in
             if pressing {
-                buttonPrimaryColor = Color(red: 242/255, green: 165/255, blue: 132/255)
+                buttonPrimaryColor = Color(red: 238/255, green: 128/255, blue: 81/255)
                 buttonPading = 0
             } else {
-                buttonPrimaryColor = Color(red: 238/255, green: 128/255, blue: 81/255)
+                buttonPrimaryColor = Color(red: 242/255, green: 165/255, blue: 132/255)
                 buttonPading = 8
                 buttonAction()
             }
