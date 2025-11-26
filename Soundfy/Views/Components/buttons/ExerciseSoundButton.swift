@@ -46,11 +46,11 @@ struct ExerciseSoundButton: View {
 
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(Color(UIColor.systemGray))
+                                .fill(Color(red: 255/255, green: 45/255, blue: 45/255))
                                 .frame(width: exercise.exerciseType == "phrasesExercise" ? 328 : 157, height: exercise.exerciseType == "phrasesExercise" ? 63 : 105)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color(red: 83/255, green: 83/255, blue: 83/255), lineWidth: 3)
+                                        .stroke(Color(red: 191/255, green: 34/255, blue: 34/255), lineWidth: 3)
                                 )
                             
                             
@@ -61,23 +61,29 @@ struct ExerciseSoundButton: View {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 50, height: 50)
+                                            .foregroundStyle(Color.white)
                                     }
                                     else {
                                         Image(systemName: item.alternativeImage!)
                                             .font(.system(size: 48))
+                                            .foregroundStyle(Color.white)
                                     }
                                 }
                                 if (exercise.exerciseType == "phonemeExercise") {
                                     Text(item.alternativeLabel)
+                                        .foregroundStyle(Color.white)
                                     .font(Font.custom("Quicksand-Bold", size: 68, relativeTo: .largeTitle))
                                 } else if (exercise.exerciseType == "wordExercise") {
                                     Text(item.alternativeLabel)
+                                        .foregroundStyle(Color.white)
                                         .font(Font.custom("Quicksand-Bold", size: 25, relativeTo: .largeTitle))
                                 } else if (exercise.exerciseType == "soundExercise") {
                                     Text(item.alternativeLabel)
+                                        .foregroundStyle(Color.white)
                                         .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
                                 } else {
                                     Text(item.alternativeLabel)
+                                        .foregroundStyle(Color.white)
                                         .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
                                 }                            }
                             .foregroundColor(.secondary)
@@ -85,21 +91,23 @@ struct ExerciseSoundButton: View {
                         .padding(.trailing, buttonPading)
                         .padding(.bottom, buttonPading)
                         
+                        
+                        // mudar alternativa
                         ZStack{
-                            Image(systemName: "xmark")
+                            Image("wrong")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 50, height: 50)
+                                .frame(width: 55, height: 55)
                                 .foregroundColor(.white)
-                                .fontWeight(.black)
+//                                .fontWeight(.black)
                             
-                            Image(systemName: "xmark")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 45, height: 45)
-                                .foregroundColor(.red)
-                                .bold()
-                        }.offset(x: 60, y: -55)
+//                            Image(systemName: "xmark")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(width: 45, height: 45)
+//                                .foregroundColor(.red)
+//                                .bold()
+                        }.offset(x: exercise.exerciseType == "phrasesExercise" ? 150 : 60, y: exercise.exerciseType == "phrasesExercise" ? -20 : -40)
                         
                         
                     }
@@ -114,11 +122,11 @@ struct ExerciseSoundButton: View {
 
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(Color(red: 159/255, green: 252/255, blue: 191/255))
+                                .fill(Color(red: 86/255, green: 189/255, blue: 55/255))
                                 .frame(width: exercise.exerciseType == "phrasesExercise" ? 328 : 157, height: exercise.exerciseType == "phrasesExercise" ? 63 : 105)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color(red: 34/255, green: 169/255, blue: 1/255), lineWidth: 3)
+                                        .stroke(Color(red: 54/255, green: 124/255, blue: 39/255), lineWidth: 3)
                                 )
                             
                             
@@ -131,45 +139,52 @@ struct ExerciseSoundButton: View {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 50, height: 50)
+                                            .foregroundStyle(Color.white)
                                     }
                                     else {
                                         Image(systemName: item.alternativeImage!)
                                             .font(.system(size: 48))
+                                            .foregroundStyle(Color.white)
                                     }
                                 }
                                 if (exercise.exerciseType == "phonemeExercise") {
                                     Text(item.alternativeLabel)
-                                    .font(Font.custom("Quicksand-Bold", size: 68, relativeTo: .largeTitle))
+                                        .foregroundStyle(Color.white)
+                                        .font(Font.custom("Quicksand-Bold", size: 68, relativeTo: .largeTitle))
                                 } else if (exercise.exerciseType == "wordExercise") {
                                     Text(item.alternativeLabel)
+                                        .foregroundStyle(Color.white)
                                         .font(Font.custom("Quicksand-Bold", size: 25, relativeTo: .largeTitle))
                                 } else if (exercise.exerciseType == "soundExercise") {
                                     Text(item.alternativeLabel)
+                                        .foregroundStyle(Color.white)
                                         .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
                                 } else {
                                     Text(item.alternativeLabel)
+                                        .foregroundStyle(Color.white)
                                         .font(Font.custom("Quicksand-Bold", size: 20, relativeTo: .largeTitle))
-                                }                            }
+                                }
+                            }
                             .foregroundColor(.green)
                         }
                         .padding(.trailing, buttonPading)
                         .padding(.bottom, buttonPading)
                         
                         ZStack{
-                            Image(systemName: "checkmark")
+                            Image("right")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 50, height: 50)
+                                .frame(width: 55, height: 55)
                                 .foregroundColor(.white)
-                                .fontWeight(.black)
+//                                .fontWeight(.black)
                             
-                            Image(systemName: "checkmark")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 45, height: 45)
-                                .foregroundColor(.green)
-                                .bold()
-                        }.offset(x: 60, y: -55)
+//                            Image(systemName: "checkmark")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(width: 45, height: 45)
+//                                .foregroundColor(.green)
+//                                .bold()
+                        }.offset(x: exercise.exerciseType == "phrasesExercise" ? 150 : 60, y: exercise.exerciseType == "phrasesExercise" ? -20 : -40)
                         
                         
                     }

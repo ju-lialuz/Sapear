@@ -2306,8 +2306,8 @@ class ContentController: ObservableObject {
                                              lessonType: "phrasesClass",
                                              lessonAlternatives: [
                                                  Alternative(alternativeId: UUID(uuidString: "650e8430-e29b-41d4-a716-446655440063")!,
-                                                             alternativeLabel: "André acendeu a luz.",
-                                                             alternativeSoundName: "André acendeu a luz",
+                                                             alternativeLabel: "Andreia acendeu a luz.",
+                                                             alternativeSoundName: "Andreia acendeu a luz",
                                                              alternativeImage: "")
                                              ]),
                                ],
