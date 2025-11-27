@@ -2380,7 +2380,7 @@ class ContentController: ObservableObject {
                                                              alternativeImage: ""),
                                                  Alternative(alternativeId: UUID(uuidString: "650e8520-e29b-41d4-a716-446655440073")!,
                                                              alternativeLabel: "Bruno buscou o livro.",
-                                                             alternativeSoundName: "Bruno buscou o livro.",
+                                                             alternativeSoundName: "Bruno buscou o livro",
                                                              alternativeImage: "")
                                                                      ],
                                                exerciseAnswer: 1),
@@ -2395,7 +2395,7 @@ class ContentController: ObservableObject {
                                                              alternativeImage: ""),
                                                  Alternative(alternativeId: UUID(uuidString: "650e8500-e29b-41d4-a716-446655450071")!,
                                                              alternativeLabel: "Bruno buscou o livro.",
-                                                             alternativeSoundName: "Bruno buscou o livro.",
+                                                             alternativeSoundName: "Bruno buscou o livro",
                                                              alternativeImage: "")
                                                                      ],
                                                exerciseAnswer: 0),
@@ -2606,14 +2606,6 @@ class ContentController: ObservableObject {
                                                  Alternative(alternativeId: UUID(uuidString: "650e8570-e29b-41d4-a716-446655460044")!,
                                                              alternativeLabel: "Andreia acendeu a luz.",
                                                              alternativeSoundName: "Andreia acendeu a luz",
-                                                             alternativeImage: ""),
-                                                 Alternative(alternativeId: UUID(uuidString: "650e8560-e29b-41d4-a716-446655460043")!,
-                                                             alternativeLabel: "G",
-                                                             alternativeSoundName: "g",
-                                                             alternativeImage: ""),
-                                                 Alternative(alternativeId: UUID(uuidString: "650e8650-e29b-41d4-a716-446655460042")!,
-                                                             alternativeLabel: "J",
-                                                             alternativeSoundName: "j",
                                                              alternativeImage: "")
                                                ],
                                                exerciseAnswer: 1)
@@ -2782,8 +2774,8 @@ class ContentController: ObservableObject {
                                                exerciseType: "phrasesExercise",
                                                exerciseAlternatives: [ // Hugo higienizou a carteira
                                                  Alternative(alternativeId: UUID(uuidString: "510e8610-e29b-41d4-a716-446655460033")!,
-                                                             alternativeLabel: "T",
-                                                             alternativeSoundName: "t",
+                                                             alternativeLabel: "Helena ajudou o amigo.",
+                                                             alternativeSoundName: "Helena ajudou o amigo",
                                                              alternativeImage: ""),
                                                  Alternative(alternativeId: UUID(uuidString: "510e8590-e29b-41d4-a716-446655460031")!,
                                                              alternativeLabel: "Hugo higienizou a carteira.",

@@ -151,6 +151,22 @@
 		E5AB74432AC21F8A00006406 /* TrailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AB74422AC21F8A00006406 /* TrailView.swift */; };
 		E5AB74452AC21F9B00006406 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AB74442AC21F9B00006406 /* ProfileView.swift */; };
 		E5B719B42AD73EB900449687 /* vazio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5B719B32AD73EB900449687 /* vazio.mp3 */; };
+		FAA515E72ED8A1FA00603677 /* Ana arrumou a cama.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515E62ED8A1FA00603677 /* Ana arrumou a cama.mp3 */; };
+		FAA515F22ED8A55600603677 /* Beatriz brincou no recreio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515E92ED8A55600603677 /* Beatriz brincou no recreio.mp3 */; };
+		FAA515F32ED8A55600603677 /* Carla cortou a cenoura.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515EB2ED8A55600603677 /* Carla cortou a cenoura.mp3 */; };
+		FAA515F42ED8A55600603677 /* Felipe folheou o livro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515ED2ED8A55600603677 /* Felipe folheou o livro.mp3 */; };
+		FAA515F52ED8A55600603677 /* Bruno buscou o livro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515EA2ED8A55600603677 /* Bruno buscou o livro.mp3 */; };
+		FAA515F62ED8A55600603677 /* Fernanda fez o cartaz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515EE2ED8A55600603677 /* Fernanda fez o cartaz.mp3 */; };
+		FAA515F72ED8A55600603677 /* Gabriela guardou ou brinquedos.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515EF2ED8A55600603677 /* Gabriela guardou ou brinquedos.mp3 */; };
+		FAA515F82ED8A55600603677 /* Helena ajudou o amigo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515F12ED8A55600603677 /* Helena ajudou o amigo.mp3 */; };
+		FAA515F92ED8A55600603677 /* Daniela desenhou no caderno.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515EC2ED8A55600603677 /* Daniela desenhou no caderno.mp3 */; };
+		FAA515FA2ED8A55600603677 /* Andreia acendeu a luz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515E82ED8A55600603677 /* Andreia acendeu a luz.mp3 */; };
+		FAA515FB2ED8A55600603677 /* Guilherme achou sua garrafa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515F02ED8A55600603677 /* Guilherme achou sua garrafa.mp3 */; };
+		FAA516002ED8A55E00603677 /* Hugo higienizou a carteira.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515FF2ED8A55E00603677 /* Hugo higienizou a carteira.mp3 */; };
+		FAA516012ED8A55E00603677 /* Eduardo encheu o copo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515FD2ED8A55E00603677 /* Eduardo encheu o copo.mp3 */; };
+		FAA516022ED8A55E00603677 /* Diego decorou a tabuada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515FC2ED8A55E00603677 /* Diego decorou a tabuada.mp3 */; };
+		FAA516032ED8A55E00603677 /* Elisa escovou o cabelo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA515FE2ED8A55E00603677 /* Elisa escovou o cabelo.mp3 */; };
+		FAA516052ED8A5BE00603677 /* Caio cozinhou arroz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAA516042ED8A5BE00603677 /* Caio cozinhou arroz.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -299,6 +315,22 @@
 		E5AB74422AC21F8A00006406 /* TrailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailView.swift; sourceTree = "<group>"; };
 		E5AB74442AC21F9B00006406 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E5B719B32AD73EB900449687 /* vazio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vazio.mp3; sourceTree = "<group>"; };
+		FAA515E62ED8A1FA00603677 /* Ana arrumou a cama.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ana arrumou a cama.mp3"; sourceTree = "<group>"; };
+		FAA515E82ED8A55600603677 /* Andreia acendeu a luz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Andreia acendeu a luz.mp3"; sourceTree = "<group>"; };
+		FAA515E92ED8A55600603677 /* Beatriz brincou no recreio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Beatriz brincou no recreio.mp3"; sourceTree = "<group>"; };
+		FAA515EA2ED8A55600603677 /* Bruno buscou o livro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bruno buscou o livro.mp3"; sourceTree = "<group>"; };
+		FAA515EB2ED8A55600603677 /* Carla cortou a cenoura.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Carla cortou a cenoura.mp3"; sourceTree = "<group>"; };
+		FAA515EC2ED8A55600603677 /* Daniela desenhou no caderno.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Daniela desenhou no caderno.mp3"; sourceTree = "<group>"; };
+		FAA515ED2ED8A55600603677 /* Felipe folheou o livro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Felipe folheou o livro.mp3"; sourceTree = "<group>"; };
+		FAA515EE2ED8A55600603677 /* Fernanda fez o cartaz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fernanda fez o cartaz.mp3"; sourceTree = "<group>"; };
+		FAA515EF2ED8A55600603677 /* Gabriela guardou ou brinquedos.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Gabriela guardou ou brinquedos.mp3"; sourceTree = "<group>"; };
+		FAA515F02ED8A55600603677 /* Guilherme achou sua garrafa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Guilherme achou sua garrafa.mp3"; sourceTree = "<group>"; };
+		FAA515F12ED8A55600603677 /* Helena ajudou o amigo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Helena ajudou o amigo.mp3"; sourceTree = "<group>"; };
+		FAA515FC2ED8A55E00603677 /* Diego decorou a tabuada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Diego decorou a tabuada.mp3"; sourceTree = "<group>"; };
+		FAA515FD2ED8A55E00603677 /* Eduardo encheu o copo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Eduardo encheu o copo.mp3"; sourceTree = "<group>"; };
+		FAA515FE2ED8A55E00603677 /* Elisa escovou o cabelo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Elisa escovou o cabelo.mp3"; sourceTree = "<group>"; };
+		FAA515FF2ED8A55E00603677 /* Hugo higienizou a carteira.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hugo higienizou a carteira.mp3"; sourceTree = "<group>"; };
+		FAA516042ED8A5BE00603677 /* Caio cozinhou arroz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Caio cozinhou arroz.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,6 +465,22 @@
 		E5C72D1A2ACF8F27005A8137 /* Sons */ = {
 			isa = PBXGroup;
 			children = (
+				FAA515E62ED8A1FA00603677 /* Ana arrumou a cama.mp3 */,
+				FAA515FC2ED8A55E00603677 /* Diego decorou a tabuada.mp3 */,
+				FAA515FD2ED8A55E00603677 /* Eduardo encheu o copo.mp3 */,
+				FAA515FE2ED8A55E00603677 /* Elisa escovou o cabelo.mp3 */,
+				FAA515FF2ED8A55E00603677 /* Hugo higienizou a carteira.mp3 */,
+				FAA515E82ED8A55600603677 /* Andreia acendeu a luz.mp3 */,
+				FAA515E92ED8A55600603677 /* Beatriz brincou no recreio.mp3 */,
+				FAA515EA2ED8A55600603677 /* Bruno buscou o livro.mp3 */,
+				FAA515EB2ED8A55600603677 /* Carla cortou a cenoura.mp3 */,
+				FAA515EC2ED8A55600603677 /* Daniela desenhou no caderno.mp3 */,
+				FAA516042ED8A5BE00603677 /* Caio cozinhou arroz.mp3 */,
+				FAA515ED2ED8A55600603677 /* Felipe folheou o livro.mp3 */,
+				FAA515EE2ED8A55600603677 /* Fernanda fez o cartaz.mp3 */,
+				FAA515EF2ED8A55600603677 /* Gabriela guardou ou brinquedos.mp3 */,
+				FAA515F02ED8A55600603677 /* Guilherme achou sua garrafa.mp3 */,
+				FAA515F12ED8A55600603677 /* Helena ajudou o amigo.mp3 */,
 				BFCEA0D92ADDCEDC00663046 /* a.mp3 */,
 				BFCEA0B12ADDCEDB00663046 /* abajur.mp3 */,
 				BFCEA0832ADDCED900663046 /* alarme.mp3 */,
@@ -632,7 +680,21 @@
 				BFCEA1402ADDCEDC00663046 /* b.mp3 in Resources */,
 				BFCEA0F62ADDCEDC00663046 /* condicionador.mp3 in Resources */,
 				BFCEA1142ADDCEDC00663046 /* quadro.mp3 in Resources */,
+				FAA516002ED8A55E00603677 /* Hugo higienizou a carteira.mp3 in Resources */,
+				FAA516012ED8A55E00603677 /* Eduardo encheu o copo.mp3 in Resources */,
+				FAA516022ED8A55E00603677 /* Diego decorou a tabuada.mp3 in Resources */,
+				FAA516032ED8A55E00603677 /* Elisa escovou o cabelo.mp3 in Resources */,
 				BFCEA0FD2ADDCEDC00663046 /* d.mp3 in Resources */,
+				FAA515F22ED8A55600603677 /* Beatriz brincou no recreio.mp3 in Resources */,
+				FAA515F32ED8A55600603677 /* Carla cortou a cenoura.mp3 in Resources */,
+				FAA515F42ED8A55600603677 /* Felipe folheou o livro.mp3 in Resources */,
+				FAA515F52ED8A55600603677 /* Bruno buscou o livro.mp3 in Resources */,
+				FAA515F62ED8A55600603677 /* Fernanda fez o cartaz.mp3 in Resources */,
+				FAA515F72ED8A55600603677 /* Gabriela guardou ou brinquedos.mp3 in Resources */,
+				FAA515F82ED8A55600603677 /* Helena ajudou o amigo.mp3 in Resources */,
+				FAA515F92ED8A55600603677 /* Daniela desenhou no caderno.mp3 in Resources */,
+				FAA515FA2ED8A55600603677 /* Andreia acendeu a luz.mp3 in Resources */,
+				FAA515FB2ED8A55600603677 /* Guilherme achou sua garrafa.mp3 in Resources */,
 				BFCEA12E2ADDCEDC00663046 /* guarda-sol.mp3 in Resources */,
 				BFCEA1092ADDCEDC00663046 /* lapis.mp3 in Resources */,
 				BFCEA0F12ADDCEDC00663046 /* geladeira.mp3 in Resources */,
@@ -655,6 +717,7 @@
 				BFCEA0DF2ADDCEDC00663046 /* porco.mp3 in Resources */,
 				BFCEA1032ADDCEDC00663046 /* lago.mp3 in Resources */,
 				BFCEA0EF2ADDCEDC00663046 /* estojo.mp3 in Resources */,
+				FAA516052ED8A5BE00603677 /* Caio cozinhou arroz.mp3 in Resources */,
 				BFCEA10F2ADDCEDC00663046 /* piano.mp3 in Resources */,
 				BFCEA0FC2ADDCEDC00663046 /* sino.mp3 in Resources */,
 				BFCEA13B2ADDCEDC00663046 /* boia.mp3 in Resources */,
@@ -683,6 +746,7 @@
 				BFCEA0FB2ADDCEDC00663046 /* tigre.mp3 in Resources */,
 				BFCEA1192ADDCEDC00663046 /* flauta.mp3 in Resources */,
 				BFCEA0F52ADDCEDC00663046 /* moxila.mp3 in Resources */,
+				FAA515E72ED8A1FA00603677 /* Ana arrumou a cama.mp3 in Resources */,
 				BFCEA1072ADDCEDC00663046 /* sabonete.mp3 in Resources */,
 				BFCEA1002ADDCEDC00663046 /* vento.mp3 in Resources */,
 				BFCEA11C2ADDCEDC00663046 /* bicicleta.mp3 in Resources */,
